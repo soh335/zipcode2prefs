@@ -3,7 +3,7 @@
 ![test](https://github.com/soh335/zipcode2prefs/workflows/test/badge.svg)
 
 zipcode2prefs return Japanese Prefectures from zipcode.
-zipcode2pref.gen.go is generated from ken_all.zip
+zipcode2prefs.gen.go is generated from ken_all.zip
 
 ## HOW TO USE
 

@@ -22,7 +22,7 @@ import (
 
 var output = flag.String("output", "zipcode2prefs.gen.go", "output path")
 
-// generate yubin no => pref list
+// generate zipcode => pref list
 func main() {
 	if err := _main(); err != nil {
 		log.Fatal(err)
@@ -37,7 +37,7 @@ func _main() error {
 		if err != nil {
 			return fmt.Errorf("%w", err)
 		}
-		req.Header.Set("User-Agent", "https://github.com/soh335/yubinno2ken")
+		req.Header.Set("User-Agent", "https://github.com/soh335/zipcode2prefs")
 
 		fmt.Printf("download %s\n", u)
 		res, err := http.DefaultClient.Do(req)
@@ -84,20 +84,20 @@ func _main() error {
 			}
 			return fmt.Errorf("%w", err)
 		}
-		yubinno := records[2]
+		zipcode := records[2]
 		pref := records[6]
-		if _, ok := prefs[yubinno]; !ok {
-			prefs[yubinno] = []string{}
+		if _, ok := prefs[zipcode]; !ok {
+			prefs[zipcode] = []string{}
 		}
 		found := false
-		for _, p := range prefs[yubinno] {
+		for _, p := range prefs[zipcode] {
 			if p == pref {
 				found = true
 				break
 			}
 		}
 		if !found {
-			prefs[yubinno] = append(prefs[yubinno], pref)
+			prefs[zipcode] = append(prefs[zipcode], pref)
 		}
 	}
 
