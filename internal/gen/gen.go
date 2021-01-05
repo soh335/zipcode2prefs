@@ -20,7 +20,7 @@ import (
 	"golang.org/x/text/transform"
 )
 
-var output = flag.String("output", "zipcode2pref.gen.go", "output path")
+var output = flag.String("output", "zipcode2prefs.gen.go", "output path")
 
 // generate yubin no => pref list
 func main() {

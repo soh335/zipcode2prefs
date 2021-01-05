@@ -1,7 +1,7 @@
-# zipcode2pref
+# zipcode2prefs
 
 ## HOW TO USE
 
 ```go
-prefs := zipcore2pref.Get("1500013") // []string{"東京都"}
+prefs := zipcode2prefs.Get("1500013") // []string{"東京都"}
 ```
